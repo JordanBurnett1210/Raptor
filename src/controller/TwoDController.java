@@ -2,21 +2,23 @@ package controller;
 
 import java.awt.Color;
 import model.Raptor;
+import view.RaptorFrame;
 
 public class TwoDController
 {
-	private TwoDFrame baseFrame;
+	private RaptorFrame baseFrame;
 	private Raptor [][] myRaptors;
 	
 	public TwoDController()
 	{
 		myRaptors = new Raptor [3][3];
-		baseFrame = new TwoDFrame(this);
+		setupArray();
+		baseFrame = new RaptorFrame(this);
 	}
 	
 	public void start()
 	{
-		setupArray();
+		
 	}
 	
 	private void setupArray()
@@ -36,5 +38,10 @@ public class TwoDController
 				}
 			}
 		}
+	}
+	
+	public Raptor [][] getMyRaptors()
+	{
+		return myRaptors;
 	}
 }
